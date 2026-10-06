@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorting Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Watch sorting happen</h1>
+    <p class="lead">Pick an algorithm, press Play, and follow each comparison and swap.</p>
+
+    <section class="controls" aria-label="Controls">
+      <label>Algorithm
+        <select id="algo">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+      </label>
+      <label>Size <input id="size" type="range" min="8" max="60" value="30"></label>
+      <label>Speed <input id="speed" type="range" min="1" max="100" value="70"></label>
+      <button id="shuffle">New array</button>
+      <button id="step">Step</button>
+      <button id="play" class="primary">Play</button>
+    </section>
+
+    <div id="stage" class="stage" aria-label="Array bars"></div>
+
+    <p id="note" class="note" aria-live="polite">Press Play or Step to begin.</p>
+
+    <section class="stats">
+      <div><b id="cmp">0</b> comparisons</div>
+      <div><b id="swp">0</b> swaps</div>
+      <div id="big-o"></div>
+    </section>
+
+    <ul class="legend">
+      <li><i class="k compare"></i>being compared</li>
+      <li><i class="k swap"></i>swapped</li>
+      <li><i class="k pivot"></i>pivot / current minimum</li>
+      <li><i class="k sorted"></i>in final position</li>
+    </ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
